@@ -137,16 +137,19 @@ Books, editor integrations, recommended libraries, IRC, etc.
    (:p "Related: We can switch back and forth between code and data via \"quoting\"."))
 
   (:article
-   (:h1 :align "center" "And now... SOME CODE!"))
+   (:h1 :align "center" "And now... SOME CODE!")
+   (:p :align "center" "Into "
+       (:a :href "http://github.com/redline6561/cl-scrobbler"
+           (:b "cl-scrobbler")) " ..."))
 
   (:article
    (:h3 "God...it's all so ugly!")
    (:p "Compared to Python? You better believe it.")
    (:p "Biggest problem right now is how to find libraries:")
    (:ul
-        (:li "cliki.net")
-        (:li "common-lisp.net")
-        (:li "cl-user.net"))
+    (:li (:a :href "http://cliki.net" "cliki.net"))
+    (:li (:a :href "http://common-lisp.net" "common-lisp.net"))
+    (:li (:a :href "http://cl-user.net" "cl-user.net")))
    (:p "Unfortunate that newcomers faced with choice about compiler, editor.")
    (:p "At least we have quicklisp! Lispbox, further improvements incoming."))
 
@@ -155,8 +158,9 @@ Books, editor integrations, recommended libraries, IRC, etc.
    (:p
     (:ul
      (:li "Friendly coworkers!")
-     (:li "Excellent books - PCL (free @ gigamonkeys.com), CLtL and HyperSpec.")
-     (:li "Excellent implentations: Clozure CL (ccl.clozure.com), SBCL, clisp.")
-     (:li "Lovely package manager - Zach Beane's Quicklisp at quicklisp.org")
+     (:li "Excellent books - " (:a :href "http://gigamonkeys.com/book/" "PCL") ", CLtL and " (:a :href "http://www.lispworks.com/documentation/HyperSpec/Front/index.htm" "the HyperSpec") "!")
+     (:li "Excellent implentations: " (:a :href "http://ccl.clozure.com/" "Clozure CL") ", " (:a :href "http://www.sbcl.org/" "SBCL") ", and "
+          (:a :href "http://www.clisp.org/" "clisp"))
+     (:li "Lovely package manager - Zach Beane's " (:a :href "http://quicklisp.org/" "Quicklisp"))
      (:li "Great folks in freenode's #lisp. Just don't ask why you should learn it!")
      (:li "Insane editor integration - SLIME for Emacs, Slimv for Vim.")))))
