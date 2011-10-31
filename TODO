@@ -1,0 +1,3 @@
+Also have defslides support a non-file output approach?
+Investigate deck.js. https://github.com/imakewebthings/deck.js
+Actually write defslide/slide. Should support a few formats or just raw (:article ,@body).

@@ -1,0 +1,5 @@
+At some point I'll document the core of this package: defslides and slide.
+
+One day this won't suck...but I'm in no hurry. And why homebrew yet more slideware? Eh, I dunno.
+
+For now, let it be known that the PERMANENT_URL_PREFIX in html5slides had to be patched and the slides.templateio-2011 image in styles.css was removed since I like that template but don't want Google logos on my presentations. :)
