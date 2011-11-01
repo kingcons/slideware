@@ -127,6 +127,14 @@ Books, editor integrations, recommended libraries, IRC, etc.
          "Modern, elegant, functional, libraries. ... damn upstarts.")))
 
   (:article
+   (:h3 "The real reason...")
+   (:p "I've yet to find a hacking experience as pleasurable as CL+SLIME.")
+   (:p "I pleasure hack in CL almost exclusively because the environment is just that nice. "
+       "Unfortunately, there will be an (at best) crude demonstration of that. "
+       "I'm mostly focused on just showing you guys the language today.")
+   (:p "I hope to address image-based programming generally with live demonstration in Emacs and SLIME in a future talk."))
+
+  (:article
    (:h3 "A Few Fundamental Concepts")
    (:p "Only two things in Lisps: Atoms and Expressions." (:br)
        "Think simple substitution and reduction.")
@@ -158,8 +166,10 @@ Books, editor integrations, recommended libraries, IRC, etc.
    (:p
     (:ul
      (:li "Friendly coworkers!")
-     (:li "Excellent books - " (:a :href "http://gigamonkeys.com/book/" "PCL") ", CLtL and " (:a :href "http://www.lispworks.com/documentation/HyperSpec/Front/index.htm" "the HyperSpec") "!")
-     (:li "Excellent implentations: " (:a :href "http://ccl.clozure.com/" "Clozure CL") ", " (:a :href "http://www.sbcl.org/" "SBCL") ", and "
+     (:li "Excellent books - " (:a :href "http://gigamonkeys.com/book/" "PCL") ", CLtL and "
+          (:a :href "http://www.lispworks.com/documentation/HyperSpec/Front/index.htm" "the HyperSpec") "!")
+     (:li "Excellent implentations: " (:a :href "http://ccl.clozure.com/" "Clozure CL") ", "
+          (:a :href "http://www.sbcl.org/" "SBCL") ", and "
           (:a :href "http://www.clisp.org/" "clisp"))
      (:li "Lovely package manager - Zach Beane's " (:a :href "http://quicklisp.org/" "Quicklisp"))
      (:li "Great folks in freenode's #lisp. Just don't ask why you should learn it!")
