@@ -166,7 +166,8 @@ Books, editor integrations, recommended libraries, IRC, etc.
    (:p
     (:ul
      (:li "Friendly coworkers!")
-     (:li "Excellent books - " (:a :href "http://gigamonkeys.com/book/" "PCL") ", CLtL and "
+     (:li "Excellent books - " (:a :href "http://gigamonkeys.com/book/" "PCL") ", "
+          (:a :href "http://www.cs.cmu.edu/Groups/AI/html/cltl/cltl2.html" "CLtL") ", and "
           (:a :href "http://www.lispworks.com/documentation/HyperSpec/Front/index.htm" "the HyperSpec") "!")
      (:li "Excellent implentations: " (:a :href "http://ccl.clozure.com/" "Clozure CL") ", "
           (:a :href "http://www.sbcl.org/" "SBCL") ", and "
