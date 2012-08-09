@@ -182,11 +182,12 @@
    (:h3 "A Culture of Metaprogramming")
    (:p "Still fairly unique to Lisp culturally...because metaprogramming and source transformation is usually "
        (:span :class :red "INSANE AND FROUGHT WITH DANGER."))
-   (:p "Technical alternatives in Dynamic and Static langs exist.")
+   (:p "Non-paren alternatives in Dynamic and Static langs exist: "
+       (:b "Template Haskell, Camlp4, Dylan, Factor, Io"))
    (:ul (:em "It is the language's responsibility to give you:")
         (:li "More structure than strings.")
         (:li "Distinct compilation phases."))
-   (:p "But thus far, no universal syntax == no safe culture of metaprogramming.")
+   (:p "Thus far, no parens == no culture of metaprogramming.")
    (:p "Fear not, I will explain macro usage carefully."))
 
   (:article
@@ -237,7 +238,7 @@
   (:article
    (:h3 "An executable spec, or Enter defopcode")
    (:p (:img :src "opa/cpu.lisp.jpg"))
-   (:p "Remember when I said " (:em "I'll " (:a :href "http://paste.lisp.org/display/130612" "Explain") "?")))
+   (:p "Remember when I said " (:em "I'll " (:a :href "http://paste.lisp.org/display/130923" "Explain") "?")))
 
   (:article
    (:h3 "A Defopcode Aside")
@@ -252,7 +253,7 @@
    (:p "Which method goes with this byte in the array?")
    (:ul
     (:li "Opcodes take a CPU, figure out their addressing mode, modify its state and return it.")
-    (:li "Store an array of methods, indexed by opcode. Opcode takes no args. GF system makes this annoying.")
+    (:li "Store an array of methods, indexed by opcode. Opcode takes no args. `find-method` makes this annoying.")
     (:li "Have a giant switch/case statement. Totally unacceptable. What is this, C? :)"))
    (:p (:a :href "https://github.com/redline6561/cl-6502/blob/master/src/utils.lisp"
            "Wound up doing dispatch via opcodes just like a switch/case interpreter..."))
@@ -264,7 +265,7 @@
        (:a :href "https://github.com/redline6561/cl-6502/blob/master/src/disassemble.lisp" "*trivial*") ".")
    (:br) (:br)
    (:p (:a :href "https://github.com/redline6561/cl-6502/blob/master/src/assemble.lisp" "Assembly")
-       " is more involved even though I was lazy and didn't write a proper parser. Still not so bad.")
+       " is more involved even though I was lazy and didn't write a proper parser, just regexes. Still not so bad.")
    (:p "2-pass assembler. First sets labels, second resolves uses.")
    (:p "Supports labels, constants, comments. Here's a "
        (:a :href "https://github.com/redline6561/cl-6502/blob/master/src/toys.lisp" "small example") "."))
@@ -278,7 +279,7 @@
        (:a :href "https://github.com/redline6561/cl-6502/blob/master/src/cpu.lisp#L139" "No defaults for you!"))
    (:br) (:br)
    (:p (:b "Relative addressing") " - Oh God, "
-       (:a :href "https://github.com/redline6561/cl-6502/blob/master/src/cpu.lisp#L265" "Oh God") "."))
+       (:a :href "https://github.com/redline6561/cl-6502/blob/master/src/cpu.lisp#L269" "Oh God") "."))
 
   (:article
    (:h3 "Emulator hurdles")
