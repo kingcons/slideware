@@ -439,6 +439,9 @@ Okay, so what runs on this thing? Opcodes!!
 {Addressing Modes, or Pointers redux}
 Addressing modes are a huge part of what's different about assembly. You don't work with variables you work with addresses. But even then you're restricted to these modes. Instructions only support a few ways of being addressed. Some addressing modes take addresses in memory, some don't. No instruction supports them all and some addressing modes are only used by one instruction. Furthermore, some opcodes need the address whereas some need the byte at that address in memory. We'll look at this more soon.
 
+TODO: This is the perfect place to introduce all the addressing modes with 6502 code examples. DUH.
+Or at least one of each major family: I.e. Implied, Accumulator, Zero-page, Absolute, Relative
+
 {Get ready to poop your pampers}
 Now we're going to look at some code. It's a little scary but I'll explain. Hang on!
 
@@ -465,6 +468,13 @@ I definitely have further plans. I've started work on both famiclom and qeng-ho 
 
 {The Dichotomy at the bottom}
 Currently, this has led me to try and figure out why I struggle to get excited about static languages. And I feel like there's this cultural divide between static and dynamic languages that we still haven't bridged. So I'm reading about that and hope to talk more about that next time. I will say that these papers are *VERY* worth reading and that the fundamental divide isn't about metaprogramming. Most lisp macros are compile-time anyhow. It's about the runtime and what's available and allowed then.
+
+TODO: The Takeaway Points
+-- We need to promote code as literature.
+-- Don't exist in a technical monoculture! Expose yourself to different historical (or modern) tribes.
+-- Compile-time metaprogramming is a great, misunderstood tool. Languages: No strings, no single-phase compilation!
+-- Dynamic langs need to look more at gradual typing and safety. Paper: Typed Scheme: From Scripts to Programs
+-- Static langs need to look more at reflection and interactivity. Paper: Types and Reflection
 
 {On Abstraction}
 "Civilization advances by extending the number of important operations which we can perform without thinking about them." – Alfred North Whitehead
