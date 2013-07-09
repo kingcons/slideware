@@ -273,7 +273,8 @@
   (:article
    (:h3 "Interesting hurdles")
    (:br) (:br)
-   (:p (:b "Decimal mode") " - Dodged that " (:a :href "https://github.com/mnaberez/py65/blob/master/src/py65/devices/mpu6502.py#L295" "bullet") ". Not in the NES! ;)")
+   (:p (:b "Decimal mode") " - Dodged that " (:a :href "https://github.com/mnaberez/py65/blob/master/src/py65/devices/mpu6502.py#L295" "bullet") ". Not in the NES! ;)"
+       (:br) "Sadly, no language can make decimal mode pretty.")
    (:br) (:br)
    (:p (:b "Status bits") " - Sort of ad-hoc and messy. "
        (:a :href "https://github.com/redline6561/cl-6502/blob/master/src/cpu.lisp#L139" "No defaults for you!"))
