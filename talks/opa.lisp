@@ -160,7 +160,7 @@
     (:li "Extensible - All opcodes are methods. CLOS makes arbitrary wrappers (think decorators or defadvice) trivial.")
     (:li "Concise -  Py65: " (:span :class :red "2091 SLOC") ". cl-6502: " (:span :class :green "879 SLOC") ".") (:br)
     (:b "Correct, Performant? Verdict still out, outlook positive.")
-    (:li "Correct - Py65: " (:span :class :red "~8000 SLOC") ". cl-6502: " (:span :class :green "~200 SLOC") "." (:br)
+    (:li "Correct - Py65: " (:span :class :green "~8000 SLOC") ". cl-6502: " (:span :class :red "~200 SLOC") "." (:br)
          "- Lots of manual testing, no large programs.")
     (:li "Performant - ZERO profiling, ZERO optimization." (:br)
          "Currently runs 2x the speed of the NES on a single core.")
