@@ -7,11 +7,64 @@
             :layout "layout-faux-widescreen")
 
   (:article
-    (:h1 "Common Lisp for Clojurists")
-    (:p "Brit Butler" (:br) "2013-10-10")
-    (:p :align :center
-        (:i (:small "(use arrow keys or PgUp/PgDown to move slides)"))))
-  )
+   (:h1 :align :center "Common Lisp for Clojurists")
+   (:br) (:br) (:br) (:br) (:br)
+   (:p :align :center "Brit Butler" (:br) "2013-10-10")
+   (:p :align :center
+       (:i (:small "(use arrow keys or PgUp/PgDown to move slides)"))))
+
+  (:article
+   (:h3 (:pre "> whoami"))
+   (:br)
+   (:ul
+    (:li (:strike "Pythonista") " Rubyist by day, Lisper by night")
+    (:li "27, started programming " (:span :class "red" "six") " years ago")
+    (:br)
+    (:li "Cut my teeth on Scheme & SICP in '08")
+    (:li "No 'real' programming (larger than 100 loc) until Oct 2009"))
+   (:br) (:br)
+   (:p :align :center (:b "Please") " stop me for questions whenever."))
+
+  (:article
+   (:h3 (:pre "> Talk Overview"))
+   (:br)
+   (:ol
+    (:li "Common Lisp - the Language") (:br)
+    (:li "Common Lisp - the Toolset") (:br)
+    (:li "Common Lisp - the Ecosystem") (:br)
+    (:li "Specific things I've built (time allowing)")))
+
+  (:article
+   (:h3 (:pre "> The Language"))
+   (:br))
+
+  (:article
+   (:h3 (:pre "> The Toolset"))
+   (:br))
+
+  (:article
+   (:h3 (:pre "> The Ecosystem"))
+   (:br))
+
+  (:article
+   (:h3 (:pre "> A Few Projects: famiclom"))
+   (:br)
+   (:img :src "trp/famiclom.png"))
+
+  (:article
+   (:h3 (:pre "> A Few Projects: coleslaw"))
+   (:br)
+   (:img :src "clfj/coleslaw.jpg"))
+
+  (:article
+   (:h3 (:pre "> A Few Projects: cl-scrobbler"))
+   (:br)
+   (:img :src "clfj/shuffletron.png"))
+
+  (:article
+   (:h1 :align :center "Questions?")
+   (:br) (:br)
+   (:p :align :center (:a :href "https://github.com/redline6561/slideware/blob/master/talks/clfj.lisp" "Slides Source"))))
 
 #|
 
@@ -35,12 +88,12 @@
 3. Community and Ecosystem (docs, specific libraries, irc/reddit)
 -- CLHS, sure. but also minispec.org, quickdocs
 -- cliki current recommended libraries
--- wondering what to use for X? use quicklisp:system-apropos, ask in IRC.
+-- wondering what to use for X? use quicklisp:system-apropos, ask in #lisp.
 
 4. Stuff I've built
 -- a blog engine, coleslaw
 -- a cpu (one day NES) emulator, cl-6502/famiclom
--- a last.fm scrobbling plugin, cl-scrobbler
+-- a last.fm scrobbling plugin for a CL command line music player, cl-scrobbler/shuffletron
 -- an archlinux package manager, paktahn
 -- mailing list scrapers, scripts, endless nonsense
 
@@ -48,6 +101,6 @@
 -- Programmer Archaeology
 -- Reflective Systems
 -- Language Runtimes
--- How in the hell we're even going to make comprehensible software
+-- How in the hell we're ever going to make comprehensible software
 
 |#
