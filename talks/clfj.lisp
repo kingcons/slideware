@@ -1,7 +1,7 @@
 (in-package :slideware)
 
 (defslides (:title "Common Lisp for Clojurists"
-            :path "/home/redline/tmp.html"
+            :path "/home/redline/quicklisp/local-projects/slideware/talks/tmp.html"
             :template "template-io2011"
             :slides-js-src "http://redlinernotes.com/docs/html5slides/slides.js"
             :layout "layout-faux-widescreen")
@@ -32,7 +32,7 @@
     (:li "Common Lisp - the Language") (:br)
     (:li "Common Lisp - the Toolset") (:br)
     (:li "Common Lisp - the Ecosystem") (:br)
-    (:li "Specific things I've built (time allowing)")))
+    (:li "A Few Projects (time allowing)")))
 
   (:article
    (:h3 (:pre "> The Language"))
@@ -47,19 +47,33 @@
    (:br))
 
   (:article
-   (:h3 (:pre "> A Few Projects: famiclom"))
-   (:br)
-   (:img :src "trp/famiclom.png"))
+   (:h3 (:pre "> A Few Projects: "
+              (:a :href "https://github.com/redline6561/cl-6502" "famiclom")))
+   (:p (:img :src "trp/famiclom.png"))
+   (:p :align :center "A (wip) Nintendo Emulator in Pure CL")
+   (:ul
+    (:li "750 lines of code for the CPU, Assembly, Disassembly.")
+    (:li "Runs at ~50 Mhz on an old Core 2 Duo.")
+    (:li "There's a literate-style "
+         (:a :href "http://redlinernotes.com/docs/cl-6502.pdf" "book")"!")))
 
   (:article
-   (:h3 (:pre "> A Few Projects: coleslaw"))
+   (:h3 (:pre "> A Few Projects: "
+              (:a :href "https://github.com/redline6561/coleslaw" "coleslaw")))
+   (:p :align :center (:img :src "clfj/coleslaw.jpg"))
+   (:p :align :center "A Static Blog Engine a la Jekyll")
    (:br)
-   (:img :src "clfj/coleslaw.jpg"))
+   (:ul
+    (:li "450 lines of Core, 250 lines of Plugins.")
+    (:li "Git-backed Markdown posts, Push to deploy.")
+    (:li "RSS and ATOM feeds, Code highlighting.")
+    (:li "Plugins for DISQUS comments, Google analytics, " (:br)
+         "LaTeX via Mathjax, Wordpress Importing, etc")))
 
   (:article
-   (:h3 (:pre "> A Few Projects: cl-scrobbler"))
-   (:br)
-   (:img :src "clfj/shuffletron.png"))
+   (:h3 (:pre "> A Few Projects: "
+              (:a :href "https://github.com/redline6561/cl-scrobbler" "cl-scrobbler")))
+   (:p (:img :src "clfj/shuffletron.png")))
 
   (:article
    (:h1 :align :center "Questions?")
@@ -70,14 +84,18 @@
 
 1. Language (oh shit)
 -- Common Lisp is not functional! Or OO! Or Imperative! It's Programmable! (show LOOM/Folio?)
+-- Things you'll miss: Pervasive destructuring, consistent standard lib/interfaces.
 -- Practical Common Lisp is *THE* beginners guide. Land of Lisp is also pretty good.
 -- syntax
--- data types
+-- data types & the type system
 -- basics (imperative)
 -- basics (OO)
 -- basics (functional)
--- libraries for crazy stuff: screamer, optima, lfarm/lparallel, xecto?
+-- conditions, macros
+-- file i/o, network i/o
+-- packages, systems
 -- repl tools: trace, break, apropos, describe, time, etc etc etc
+-- libraries for crazy stuff: screamer, optima, lfarm/lparallel, xecto?
 
 2. Implementation and Tools (compilers, editor integration, build system, library management)
 -- just sbcl or abcl, can talk more about this over beers/stackoverflow/twitter if you want
@@ -89,18 +107,5 @@
 -- CLHS, sure. but also minispec.org, quickdocs
 -- cliki current recommended libraries
 -- wondering what to use for X? use quicklisp:system-apropos, ask in #lisp.
-
-4. Stuff I've built
--- a blog engine, coleslaw
--- a cpu (one day NES) emulator, cl-6502/famiclom
--- a last.fm scrobbling plugin for a CL command line music player, cl-scrobbler/shuffletron
--- an archlinux package manager, paktahn
--- mailing list scrapers, scripts, endless nonsense
-
-5. Stuff I obsessively think about even though i'm lazy and uninformed
--- Programmer Archaeology
--- Reflective Systems
--- Language Runtimes
--- How in the hell we're ever going to make comprehensible software
 
 |#
