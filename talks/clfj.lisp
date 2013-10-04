@@ -115,7 +115,22 @@
 
   (:article
    (:h3 (:pre "> The Language"))
-   (:br))
+   (:br)
+   (:p "Common Lisp is (as far as possible) a Systems Lisp.")
+   (:ul
+    (:li
+     (:blockquote "What I like about Lisp is that you can " (:br)
+                  (:span :class :blue "feel the bits between your toes") "."
+                  (:br) (:i " - Drew McDermott"))))
+   (:br)
+   (:p "Common Lisp isn't \"multiparadigm\", it's agnostic.")
+   (:ul
+    (:li
+     (:blockquote "Lisp is a " (:span :class :red "programmer amplifier") "."
+                  (:br) (:i " - Martin Rodgers")))))
+
+  (:article
+   (:h3 (:pre "> The Language")))
 
   (:article
    (:h3 (:pre "> Selected Projects: "
