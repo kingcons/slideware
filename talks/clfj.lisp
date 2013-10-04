@@ -99,7 +99,6 @@
 
   (:article
    (:h3 (:pre "> The Ecosystem"))
-   (:br)
    (:p "Or, \"What lib do I use for X?\"")
    (:ul
     (:li "Check " (:a :href "http://www.cliki.net/current%20recommended%20libraries"
@@ -110,7 +109,12 @@
    (:ul
     (:li "Start with " (:a :href "http://gigamonkeys.com/book/" "Practical Common Lisp") "!")
     (:li "Take language questions to " (:a :href "http://minispec.org/" "the Minispec") ", "
-         (:br) "take library questions to " (:a :href "http://quickdocs.org/" "QuickDocs") ".")))
+         (:br) "take library questions to " (:a :href "http://quickdocs.org/" "QuickDocs") ".")
+    (:li "There are also "
+         (:a :href "http://redlinernotes.com/docs/talks/clfj/cl-reference-quick.pdf" "many") " "
+         (:a :href "http://redlinernotes.com/docs/talks/clfj/cl-reference-brian.pdf" "quick") " "
+         (:a :href "http://redlinernotes.com/docs/talks/clfj/cl-reference-mitch.pdf" "references") ".")))
+
 
 
   (:article
