@@ -25,15 +25,24 @@ I really want 3 themes:
 
 (in-package :slideware)
 
+(defparameter *deploy* t)
+
 (defun img (name)
   "Resolve img paths to local names until deploy time."
-  (format nil "/home/redline/quicklisp/local-projects/slideware/talks/~a" name))
+  (let ((talks-root "/home/redline/quicklisp/local-projects/slideware/talks/"))
+    (if *deploy*
+        name
+        (format nil "~a/~a" talks-root name))))
+
+(defun src (name)
+  (if *deploy*
+      (format nil "http://redlinernotes.com/docs/~a" name)
+      (format nil "file:///home/redline/quicklisp/local-projects/slideware/lib/~a" name)))
 
 (defslides (:title "Frontend Guest Lecture"
             :path "/home/redline/tmp.html"
             :template "template-io2011"
-            :slides-js-src "file:///home/redline/quicklisp/local-projects/slideware/lib/html5slides/slides.js"
-;            :slides-js-src "http://redlinernotes.com/docs/html5slides/slides.js"
+            :slides-js-src (src "html5slides/slides.js")
             :layout "layout-faux-widescreen")
 
   (:article
@@ -129,32 +138,12 @@ I really want 3 themes:
   (:article
    (:h3 "Whence the Web?")
    (:br)
-   (:p "Technical Debt is" (:em (:b " very ")) "real.")
-   (:p "We all live with it.")
-   (:ul
-    (:li "Stuff gets pushed out the door for business reasons."
-         (:br) "You're stuck with that until people "
-         (:b "stop using it") ".")
-    (:br)
-    (:li "jQuery 1.0 was released in 2006. Gmail was out in 2004.")
-    (:br)
-    (:li "Promises are just now being added to javascript.")
-    (:br)
-    (:li "Modules still aren't a solved problem." (:br)
-         "See: "
-         (:a :href "https://scott.mn/2014/03/03/javascript_modules/"
-             "browserify, requirejs, google closure, es6 modules"))))
-
-  (:article
-   (:h3 "Whence the Web?")
    (:br)
-   (:p "Requirements Will Change")
-   (:p "'Can you make it look more like Java?'")
-   (:p "How do we control the damage?")
-   (:ul
-    (:li "What can be put off until the next sprint?")
-    (:br)
-    (:li "TODO")))
+   (:p (:b "Even Javascript is " (:em "just another program") "."))
+   (:br)
+   (:br)
+   (:p "This sounds trite but has profound implications.")
+   (:p "Which we'll get into in the third section of this talk."))
 
   (:article
    (:h3 "Whence the Web?")
@@ -175,11 +164,40 @@ I really want 3 themes:
   (:article
    (:h3 "Whence the Web?")
    (:br)
-   (:p "TODO"))
+   (:p "Requirements Will Change")
+   (:blockquote "'Can you make it look more like Java?'")
+   (:br)
+   (:p "How do we control the damage?")
+   (:ul
+    (:li "Before: Encapsulation, Single Responsibility Principle, Etc.")
+    (:br)
+    (:li "Don't grow the sprint, change the sprint.")
+    (:br)
+    (:li "Try to limit scope as much as possible.")))
+
+  (:article
+   (:h3 "Whence the Web?")
+   (:br)
+   (:p "Technical Debt is" (:em (:b " very ")) "real.")
+   (:p "We all live with it.")
+   (:ul
+    (:li "Stuff gets pushed out the door for business reasons."
+         (:br) "You're stuck with that until people "
+         (:b "stop using it") ".")
+    (:br)
+    (:li "jQuery 1.0 was released in 2006. Gmail was out in 2004.")
+    (:br)
+    (:li "Promises are just now being added to javascript.")
+    (:br)
+    (:li "Modules still aren't a solved problem." (:br)
+         "See: "
+         (:a :href "https://scott.mn/2014/03/03/javascript_modules/"
+             "browserify, requirejs, google closure, es6 modules"))))
 
   (:article
    (:h3 "We're Programmer Archaeologists")
    (:br)
+   (:p "So let's talk about Technical Debt.")
    (:br)
    (:br)
    (:div :align :center (:img :src (img "igl/memory.jpg"))))
@@ -187,10 +205,12 @@ I really want 3 themes:
   (:article
    (:h3 "We're Programmer Archaeologists")
    (:br)
-   (:br)
    (:p "Wait until you can look at code you wrote 6 months ago.")
    (:br)
-   (:div :align :center (:img :src (img "opa/cxx.gif"))))
+   (:br)
+   (:div :align :center (:img :src (img "opa/cxx.gif")
+                              :height "300px"
+                              :width "320px")))
 
   (:article
    (:h3 "We're Programmer Archaeologists")
@@ -218,6 +238,17 @@ I really want 3 themes:
 
   (:article
    (:h3 "We're Programmer Archaeologists")
+   (:br)
+   (:p "Programs Don't Compose. Even if James says otherwise.")
+   (:br)
+   (:p "Certainly functions can compose, especially pure ones.")
+   (:br)
+   (:p "But modules and programs don't, generally speaking.")
+   (:br)
+   (:p "We can't put photoshop and an audio editor together and get a video editor."))
+
+  (:article
+   (:h3 "We're Programmer Archaeologists")
    (:br) (:br)
    (:img :align :left :style "height: 80%;" :src (img "trp/sicp.jpg"))
    (:br) (:br)
@@ -235,8 +266,88 @@ I really want 3 themes:
   (:article
    (:h3 "We're Programmer Archaeologists")
    (:br)
-   (:p "TODO"))
+   (:p "This makes me kind of sad.")
+   (:br)
+   (:p "Old curriculum was for a world that built things from scratch.")
+   (:br)
+   (:p "New curriculum is for a world that's all about reuse.")
+   (:br)
+   (:p "We've really never slowed down since the dot com boom.")
+   (:br)
+   (:p "But there is good news..."))
 
   (:article
-   (:h3 "There Is No Magic"))
-)
+   (:h3 "There Is No Magic")
+   (:br)
+   (:p (:b "You can understand how computers work!"))
+   (:br)
+   (:ul
+    (:li "Vast majority of computer behavior is deterministic, repeatable.")
+    (:li "They follow simple " (:em "(okay, elaborate)") " sets of rules.")
+    (:li "The basics of programming have been the same for 30-40 years.")
+    (:li "You can almost always drill down even though there's lots of code.")
+    (:li "At a high level, CPUs and PLs work in a straightforward way.")))
+
+  (:article
+   (:h3 "There Is No Magic")
+   (:br)
+   (:p "How CPUs Work")
+   (:ol
+    (:li " Read a variable (technically a 'register') called the program counter.")
+    (:br)
+    (:li " Program Counter holds the location of the code to run next.")
+    (:br)
+    (:li " Run that code. That code updates the program counter.")
+    (:br)
+    (:li " Start over from the top. Do this forever.")))
+
+  (:article
+   (:h3 "There Is No Magic")
+   (:br)
+   (:p "Case Study - "
+       (:a :href "https://github.com/redline6561/cl-6502" "cl-6502") "/"
+       (:a :href "http://blog.redlinernotes.com/posts/So-Close-and-Yet-So-Far.html" "famiclom"))
+   (:br) (:br)
+   (:img :src (img "trp/famiclom.png"))
+   (:br) (:br)
+   (:p "PS: I " (:em "Love") " emulation.")
+   (:p "See also: "
+       (:a :href "https://github.com/bfirsh/jsnes"
+           "JSNES")))
+
+  (:article
+   (:h3 "There Is No Magic")
+   (:br)
+   (:p "How PLs Work")
+   (:ol
+    (:li " Compiled: Translate language X into language Y that something else can run.")
+    (:li " Interpreted: Read Language X line by line and execute it directly."))
+   (:br)
+   (:p "Okay, technically a little more complicated. (read: lots)")
+   (:p "Most JS implementations are JIT-compiled which is a sort of hybrid technique."))
+
+  (:article
+   (:h3 "There Is No Magic")
+   (:br)
+   (:p "Can talk about this a lot more if folks are interested.")
+   (:br)
+   (:p "cl-6502 can be thought of as an interpreter for assembly language.")
+   (:br)
+   (:p "Very dumb/naive though. No AST. No rewriting."))
+
+  (:article
+   (:h3 "There Is No Magic")
+   (:br)
+   (:p "A Magic Trick For Your Entertainment")
+   (:br) (:br)
+   (:p (:b "How do you create arrays in a language with nothing but lexical scoping and first-class functions?"))
+   (:p :align :right " - Stolen from SICP, "
+       (:a :href "http://mitpress.mit.edu/sicp/full-text/book/book-Z-H-14.html"
+           "Chapter 2, Problem 4"))
+   (:br)
+   (:a :href "https://gist.github.com/redline6561/68baa364b98ed621bbba" "Spoilers"))
+
+  (:article
+   (:h3 "Questions?")
+   (:br)
+   (:h1 :align :center "Thanks y'all. " (:span :class :red "<3"))))
